@@ -1,6 +1,6 @@
 @import '../../variables.scss';
 
-.tooltip {
+.toast {
     display: flex;
     align-items: center;
     position: fixed;
@@ -15,7 +15,7 @@
     cursor: pointer;
     opacity: 0;
     transform: translateX(-20px);
-    animation: tooltipAnimation 0.3s forwards;
+    animation: toastAnimation 0.3s forwards;
 
     @include screen-md-up {
         top: 90px;
@@ -57,7 +57,7 @@
     background: $alert-dark;
 }
 
-@keyframes tooltipAnimation {
+@keyframes toastAnimation {
     to {
         opacity: 0.9;
         transform: initial;

@@ -17,13 +17,14 @@ const Toast = ({ type, message }: PropsToast) => {
     }, [message])
 
     React.useEffect(() => {
-        progressBar(styles.progressBar, getTimer())
+        const timer = getTimer()
+        progressBar(timer)
         setTimeout(() => {
             remove()
         }, getTimer() * 100)
     }, [getTimer, remove])
 
-    function progressBar(className: string, timer: number) {
+    function progressBar(timer: number) {
         console.log(styles)
         const id = setInterval(frame, timer)
         let width = 1
@@ -38,7 +39,7 @@ const Toast = ({ type, message }: PropsToast) => {
     }
 
     return (
-        <div className={`${styles.tooltip} ${styles[type]}`} onClick={remove}>
+        <div className={`${styles.toast} ${styles[type]}`} onClick={remove}>
             {message}
             <div ref={toastRef} className={styles.progressBar}></div>
         </div>
