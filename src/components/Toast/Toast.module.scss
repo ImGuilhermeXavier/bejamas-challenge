@@ -1,0 +1,66 @@
+@import '../../variables.scss';
+
+.tooltip {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: calc(100% - 20px);
+    z-index: 9999;
+    right: 10px;
+    min-height: 82px;
+    border-radius: 8px;
+    color: $white;
+    font-size: 16px;
+    padding: 12px;
+    bottom: 80px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: tooltipAnimation 0.3s forwards;
+
+    @include screen-md-up {
+        top: 90px;
+        bottom: unset;
+        max-width: 330px;
+        right: 30px;
+    }
+}
+
+.tooltipSuccess {
+    background: $success;
+}
+
+.tooltipError {
+    background: $error;
+}
+
+.tooltipAlert {
+    background: $alert;
+}
+
+.progressBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    border-radius: 0 10px 10px 10px;
+}
+
+.tooltipSuccess .progressBar {
+    background: $success-dark;
+}
+
+.tooltipError .progressBar {
+    background: $error-dark;
+}
+
+.tooltipAlert .progressBar {
+    background: $alert-dark;
+}
+
+@keyframes tooltipAnimation {
+    to {
+        opacity: 0.9;
+        transform: initial;
+    }
+}
