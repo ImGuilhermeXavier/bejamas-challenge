@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import logo from './logo.svg'
-import './App.css'
 import useToast from 'hooks/useToast'
 
 function App() {
