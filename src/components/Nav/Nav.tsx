@@ -6,7 +6,9 @@ import styles from './Nav.module.scss'
 function Nav() {
     return (
         <nav className={styles.nav}>
-            <img className={styles.bejamas} src={logo} alt="Logo Bejamas" />
+            <div>
+                <img className={styles.bejamas} src={logo} alt="Logo Bejamas" />
+            </div>
             <img
                 className={styles.marketCar}
                 src={marketCarIcon}
