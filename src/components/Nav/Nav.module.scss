@@ -1,0 +1,21 @@
+@import 'variables.scss';
+
+.nav {
+    border-bottom: solid 4px #e5e5e5;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include screen-md-up {
+        margin: 0 3rem;
+    }
+}
+
+.bejamas {
+    width: 120px;
+}
+
+.marketCar {
+    width: 35px;
+}
