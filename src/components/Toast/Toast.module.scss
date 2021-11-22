@@ -4,8 +4,7 @@
     display: flex;
     align-items: center;
     position: fixed;
-    width: calc(100% - 20px);
-    z-index: 9999;
+    width: calc(100% - 45px);
     right: 10px;
     min-height: 82px;
     border-radius: 8px;
@@ -26,15 +25,15 @@
     }
 }
 
-.tooltipSuccess {
+.success {
     background: $success;
 }
 
-.tooltipError {
+.error {
     background: $error;
 }
 
-.tooltipAlert {
+.alert {
     background: $alert;
 }
 
@@ -46,15 +45,15 @@
     border-radius: 0 10px 10px 10px;
 }
 
-.tooltipSuccess .progressBar {
+.success .progressBar {
     background: $success-dark;
 }
 
-.tooltipError .progressBar {
+.error .progressBar {
     background: $error-dark;
 }
 
-.tooltipAlert .progressBar {
+.alert .progressBar {
     background: $alert-dark;
 }
 

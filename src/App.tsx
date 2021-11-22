@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import useToast from 'hooks/useToast'
 
 function App() {
+    const toast = useToast()
+    useEffect(() => {
+        toast.success('bom diaaaaaaaaaa dsa d asd sa d sa dsa dsa')
+    }, [toast])
     return (
         <div className="App">
             <header className="App-header">

@@ -1,0 +1,87 @@
+// Main Colors
+$primary-color: #5a1c67;
+$secondary-color: #d9186a;
+$tertiary-color: #7a2b81;
+
+// Purple Variation
+$primary-light: #894895;
+$primary-dark: #400054;
+
+// Pink Variation
+$secondary-light: #df4c86;
+$secondary-dark: #a10240;
+
+// Grayscale
+$black: #000000;
+$dark-gray: #222222;
+$gray: #333333;
+$gray-2: #666666;
+$gray-3: #999999;
+$gray-4: #bbbbbb;
+$gray-5: #cccccc;
+$gray-6: #eeeeee;
+$white: #ffffff;
+$lg: #f5f5f5;
+
+// Premium Colors
+$gold: #e0b346;
+$gold-light: #f9e274;
+$gold-dark: #d88d46;
+
+// Tokens
+$token: #1fae9b;
+$token-light: #47c0ad;
+$token-dark: #007e6d;
+
+// States
+$error: #cd2724;
+$error-light: #e34e4b;
+$error-dark: #940000;
+$error-notification: #ffd1d1;
+
+$alert: #de8924;
+$alert-light: #ed9a38;
+$alert-dark: #a75c00;
+$alert-notification: #ffecd1;
+
+$success: #38944a;
+$success-light: #50a95c;
+$success-dark: #00651f;
+$success-notification: #c2f4c9;
+
+// Screen Sizes
+@mixin screen-extra-xs-up {
+    @media (min-width: 350px) {
+        @content;
+    }
+}
+
+@mixin screen-xs-up {
+    @media (min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin screen-sm-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin screen-md-up {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin screen-lg-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin screen-xl-up {
+    @media (min-width: 1920px) {
+        @content;
+    }
+}
