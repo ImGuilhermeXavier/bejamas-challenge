@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Product from 'interfaces'
 import styles from './HomePresentation.module.scss'
+import Button from 'components/Button/Button'
 
 interface HomePresentationInterface {
     featuredProduct: Product
@@ -22,7 +23,9 @@ function HomePresentation({ featuredProduct }: HomePresentationInterface) {
                 />
                 <div className={styles.tag}>Photo of the day</div>
             </div>
-            <button>Add to cart</button>
+            <Button size="lg" buttonType="primary">
+                Add to cart
+            </Button>
 
             <h2 className={styles.subtitle}>
                 About the {featuredProduct.name}
