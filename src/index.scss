@@ -2,7 +2,13 @@
 
 @font-face {
     font-family: 'Archivo';
-    src: url(static/fonts/Archivo-VariableFont.ttf);
+    src: url('static/fonts/Archivo-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Archivo';
+    font-weight: bold;
+    src: url('static/fonts/Archivo-Bold.ttf') format('truetype');
 }
 
 * {

@@ -9,5 +9,16 @@ export default interface Product {
     }
     bestseller: boolean
     featured: boolean
-    details: string | null
+    details?: {
+        description: string
+        dimmentions: {
+            width: number
+            height: number
+        }
+        size: number
+        recommendations: {
+            src: string
+            alt: string
+        }[]
+    }
 }

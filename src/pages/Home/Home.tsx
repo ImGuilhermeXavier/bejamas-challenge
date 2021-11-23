@@ -2,6 +2,7 @@ import api from 'api'
 import React, { useState } from 'react'
 import HomePresentation from './HomePresentation/HomePresentation'
 import Product from 'interfaces'
+import styles from './Home.module.scss'
 
 function Home() {
     const [products, setProducts] = useState<Array<Product> | null>(null)
@@ -10,7 +11,7 @@ function Home() {
     React.useEffect(() => {
         async function getProducts() {
             const { data: res } = await api.get('products')
-            setProducts(res.data.map((product: any) => product.data))
+            setProducts(res.data.map((product: { data: [] }) => product.data))
         }
         getProducts()
     }, [])
@@ -22,15 +23,12 @@ function Home() {
         )
     }, [products])
 
-    console.log(products)
-    console.log(featuredProduct)
-
     return (
-        <>
+        <main className={styles.home}>
             {featuredProduct ? (
                 <HomePresentation featuredProduct={featuredProduct} />
             ) : null}
-        </>
+        </main>
     )
 }
 
