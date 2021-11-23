@@ -1,7 +1,11 @@
 import React from 'react'
-import styles from './HomePresentation.module.scss'
+import Product from 'interfaces'
 
-function HomePresentation() {
+interface HomePresentationInterface {
+    featuredProduct: Product
+}
+
+function HomePresentation({ featuredProduct }: HomePresentationInterface) {
     return <div></div>
 }
 
