@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import HomePresentation from './HomePresentation/HomePresentation'
 import Product from 'interfaces'
 import styles from './Home.module.scss'
+import HomeProducts from './HomeProducts/HomeProducts'
 
 function Home() {
     const [products, setProducts] = useState<Array<Product> | null>(null)
@@ -28,6 +29,8 @@ function Home() {
             {featuredProduct ? (
                 <HomePresentation featuredProduct={featuredProduct} />
             ) : null}
+            <div className={styles.divider}></div>
+            <HomeProducts />
         </main>
     )
 }
