@@ -1,5 +1,12 @@
 @import 'variables.scss';
 
+.homePresentation {
+    @include screen-md-up {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+    }
+}
+
 .title {
     font-weight: bold;
     font-size: 32px;
@@ -9,15 +16,30 @@
 .imgContent {
     position: relative;
     margin-bottom: 1.5rem;
+
+    @include screen-md-up {
+        grid-column: span 2;
+    }
 }
 
 .img {
     width: 100%;
+
+    @include screen-md-up {
+        object-fit: cover;
+        height: 550px;
+    }
+}
+
+.button {
+    @include screen-md-up {
+        display: none;
+    }
 }
 
 .tag {
     position: absolute;
-    bottom: 4px;
+    bottom: 0px;
     background: $white;
     font-weight: bold;
     font-size: 1rem;
@@ -46,6 +68,15 @@
 .recommendationImg {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    @include screen-md-up {
+        max-width: 400px;
+        justify-self: end;
+        text-align: end;
+    }
 }
 
 .infos {

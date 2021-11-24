@@ -13,9 +13,9 @@ function HomePresentation({ featuredProduct }: HomePresentationInterface) {
     }, [featuredProduct])
 
     return (
-        <section>
-            <h1 className={styles.title}>{featuredProduct.name}</h1>
+        <section className={styles.homePresentation}>
             <div className={styles.imgContent}>
+                <h1 className={styles.title}>{featuredProduct.name}</h1>
                 <img
                     className={styles.img}
                     src={featuredProduct.image.src}
@@ -23,19 +23,21 @@ function HomePresentation({ featuredProduct }: HomePresentationInterface) {
                 />
                 <div className={styles.tag}>Photo of the day</div>
             </div>
-            <Button size="lg" buttonType="primary">
+            <Button className={styles.button} size="lg" buttonType="primary">
                 Add to cart
             </Button>
 
-            <h2 className={styles.subtitle}>
-                About the {featuredProduct.name}
-            </h2>
-            <p className={styles.description}>
-                {featuredProduct.details?.description}
-            </p>
+            <section>
+                <h2 className={styles.subtitle}>
+                    About the {featuredProduct.name}
+                </h2>
+                <p className={styles.description}>
+                    {featuredProduct.details?.description}
+                </p>
+            </section>
 
             {featuredProduct.details && (
-                <>
+                <section className={styles.content}>
                     <h2 className={styles.subtitle}>People also buy</h2>
                     <section className={styles.recommendations}>
                         {featuredProduct.details?.recommendations?.map(
@@ -63,7 +65,7 @@ function HomePresentation({ featuredProduct }: HomePresentationInterface) {
                         </p>
                         <p>Size: {featuredProduct.details.size / 1000}mb</p>
                     </h3>
-                </>
+                </section>
             )}
         </section>
     )

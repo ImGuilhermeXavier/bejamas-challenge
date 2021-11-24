@@ -1,3 +1,9 @@
+@import 'variables.scss';
+
 .home {
     margin: 1rem;
+
+    @include screen-md-up {
+        margin: 1rem 3rem;
+    }
 }
