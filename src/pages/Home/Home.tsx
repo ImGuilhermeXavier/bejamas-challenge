@@ -30,7 +30,7 @@ function Home() {
                 <HomePresentation featuredProduct={featuredProduct} />
             ) : null}
             <div className={styles.divider}></div>
-            <HomeProducts />
+            <HomeProducts products={products} />
         </main>
     )
 }

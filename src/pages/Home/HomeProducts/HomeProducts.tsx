@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import ProductInterface from 'interfaces'
 import styles from './HomeProducts.module.scss'
+import Product from 'components/Product/Product'
 
-function HomeProducts() {
+interface HomeProductsInterface {
+    products: ProductInterface[] | null
+}
+
+function HomeProducts({ products }: HomeProductsInterface) {
     const [premium, setPremium] = useState<boolean>(false)
 
     useEffect(() => {
@@ -41,7 +47,15 @@ function HomeProducts() {
             </header>
 
             <section className="category"></section>
-            <section className="products"></section>
+            <section className={styles.products}>
+                {products ? (
+                    products.map((product, index) => (
+                        <Product {...product} key={index} />
+                    ))
+                ) : (
+                    <div>Not found...</div>
+                )}
+            </section>
         </section>
     )
 }
