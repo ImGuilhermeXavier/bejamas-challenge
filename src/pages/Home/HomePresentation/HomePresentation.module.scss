@@ -83,4 +83,8 @@
     color: $gray;
     font-size: 22px;
     font-weight: normal;
+
+    @include screen-md-up {
+        font-size: 16px;
+    }
 }
