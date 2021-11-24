@@ -2,10 +2,34 @@
 
 .homeProducts {
     margin-bottom: 30vh;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 3fr;
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    grid-column: span 2;
+}
+
+.optionButton {
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: $light-gray;
+}
+
+.optionButton.optionButtonSm {
+    font-size: 18px;
+}
+
+.optionSelected {
+    color: $primary-color;
+}
+
+section {
+    border: solid 1px red;
 }
