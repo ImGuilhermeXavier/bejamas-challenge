@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import 'variables.scss';
 
 .bottomSheet {
     position: absolute;
@@ -9,7 +9,7 @@
     height: 6px;
     margin: 20px auto 30px;
     border-radius: 3px;
-    background-color: $gray-5;
+    background-color: $light-gray;
 }
 
 .inside {

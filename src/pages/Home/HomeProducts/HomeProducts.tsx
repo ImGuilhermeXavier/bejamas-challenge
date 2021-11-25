@@ -5,6 +5,7 @@ import Product from 'components/Product/Product'
 
 import filter from 'static/icons/filter.svg'
 import arrow from 'static/icons/arrow.svg'
+import BottomSheet from 'components/BottomSheet/BottomSheet'
 
 interface HomeProductsInterface {
     products: ProductInterface[] | null
@@ -16,6 +17,7 @@ function HomeProducts({ products }: HomeProductsInterface) {
     >(products)
     const [premium, setPremium] = useState(false)
     const [desc, setDesc] = useState(false)
+    const [bottomSheetFilters, setBottomSheetFilters] = useState(false)
     const [sortType, setSortType] = useState<'price' | null>(null)
 
     function sortBy(type: 'price', isDesc: boolean) {
@@ -77,7 +79,10 @@ function HomeProducts({ products }: HomeProductsInterface) {
                         />
                     </button>
                 </h3>
-                <div className={styles.filter}>
+                <div
+                    className={styles.filter}
+                    onClick={() => setBottomSheetFilters(true)}
+                >
                     <img src={filter} alt="Filter icon" />
                 </div>
             </header>
@@ -91,6 +96,36 @@ function HomeProducts({ products }: HomeProductsInterface) {
                     <div>Not found...</div>
                 )}
             </section>
+            {bottomSheetFilters && (
+                <BottomSheet
+                    className={styles.bottomSheet}
+                    isOpen={bottomSheetFilters}
+                    handleClose={() => setBottomSheetFilters(false)}
+                >
+                    <>
+                        <h3 className={`${styles.sort} ${styles.filterDesk}`}>
+                            Sort By{' '}
+                            <button
+                                className={`${styles.optionButton} ${
+                                    styles.optionButtonSm
+                                } ${
+                                    sortType ? '' : styles.optionButtonDisabled
+                                }`}
+                                onClick={() => sortBy('price', !desc)}
+                            >
+                                Price
+                                <img
+                                    className={`${styles.iconSort} ${
+                                        desc ? styles.iconSortDesc : ''
+                                    }`}
+                                    src={arrow}
+                                    alt="Arrow icon"
+                                />
+                            </button>
+                        </h3>
+                    </>
+                </BottomSheet>
+            )}
         </section>
     )
 }
