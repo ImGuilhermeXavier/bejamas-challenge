@@ -47,6 +47,8 @@
 .products {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    max-height: 300px;
 }
 
 .product {
