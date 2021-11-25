@@ -87,3 +87,5 @@ self.addEventListener('activate', async () => {
         tab.navigate(tab.url)
     })
 })
+
+// Any other custom service worker logic can go here.
