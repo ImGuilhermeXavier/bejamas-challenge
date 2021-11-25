@@ -1,3 +1,3 @@
-# Bejamas Challenge
+# Challenge for Bejamas Challenge
 
-Heroku: https://bejamas-challenge-app.herokuapp.com/
+[Heroku] https://bejamas-challenge-app.herokuapp.com/
