@@ -12,10 +12,6 @@ interface HomeProductsInterface {
 function HomeProducts({ products }: HomeProductsInterface) {
     const [premium, setPremium] = useState<boolean>(false)
 
-    useEffect(() => {
-        console.log('change Best seller')
-    }, [premium])
-
     return (
         <section className={styles.homeProducts}>
             <header className={styles.header}>
@@ -53,9 +49,13 @@ function HomeProducts({ products }: HomeProductsInterface) {
 
             <section className={styles.products}>
                 {products ? (
-                    products.map((product, index) => (
-                        <Product {...product} key={index} />
-                    ))
+                    products
+                        .filter(({ bestseller }) =>
+                            premium ? bestseller : true,
+                        )
+                        .map((product, index) => (
+                            <Product {...product} key={index} />
+                        ))
                 ) : (
                     <div>Not found...</div>
                 )}
