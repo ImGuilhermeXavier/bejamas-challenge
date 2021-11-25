@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Product from 'interfaces'
 import styles from './HomePresentation.module.scss'
 import Button from 'components/Button/Button'

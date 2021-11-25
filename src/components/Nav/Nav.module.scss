@@ -20,3 +20,57 @@
 .marketCar {
     width: 35px;
 }
+
+.cartArea {
+    position: relative;
+}
+
+.cartCount {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    color: white;
+    background: black;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+.bottomSheet {
+    padding: 1rem;
+}
+
+.divider {
+    border-bottom: solid 3px $lg;
+    margin: 1.5rem 0;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+}
+
+.product {
+    margin: 1rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.price {
+    color: $light-gray;
+}
+
+.infos {
+    font-size: 22px;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}

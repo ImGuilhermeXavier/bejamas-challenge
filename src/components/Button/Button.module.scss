@@ -33,9 +33,8 @@
 
 .aux {
     background-color: $tertiary-color;
-    border-color: $primary-color;
+    border: solid 2px $primary-color;
     color: $primary-color;
-    border-radius: 4px;
 
     &:hover {
         background-color: $light-gray;
