@@ -54,7 +54,7 @@ function Product({
             <p className={styles.category}>{category}</p>
             <p className={styles.name}>{name}</p>
             <p className={styles.price}>
-                {currency}
+                {currency && `$`}
                 {price}
             </p>
         </section>

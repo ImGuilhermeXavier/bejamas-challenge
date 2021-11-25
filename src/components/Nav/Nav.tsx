@@ -40,7 +40,9 @@ function Nav() {
                             <section className={styles.product} key={index}>
                                 <div className={styles.infos}>
                                     <p className={styles.name}>{name}</p>
-                                    <p className={styles.price}>{price}</p>
+                                    <p
+                                        className={styles.price}
+                                    >{`$${price}`}</p>
                                 </div>
                                 <img
                                     className={styles.image}
