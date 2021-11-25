@@ -50,10 +50,14 @@
 }
 
 .product {
-    margin: 1rem 4rem;
+    margin: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include screen-md-up {
+        margin: 1rem 4rem;
+    }
 }
 
 .name {
