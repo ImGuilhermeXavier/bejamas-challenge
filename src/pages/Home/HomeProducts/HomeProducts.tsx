@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import ProductInterface from 'interfaces'
 import styles from './HomeProducts.module.scss'
 import Product from 'components/Product/Product'
