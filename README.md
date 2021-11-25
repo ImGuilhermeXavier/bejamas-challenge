@@ -6,13 +6,14 @@
 [Features]
 
 
-✅ Featured Product
+✅  Featured Product
 
-✅ Product List
+✅  Product List
 
-✅ Add to cart
+✅  Add to cart
 
-✅ Sorting by price
+✅  Sorting by price
 
-✅ API Implementation
+✅  API Implementation
 
+✅  Service Worker
