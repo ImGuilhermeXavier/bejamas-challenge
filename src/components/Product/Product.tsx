@@ -17,7 +17,12 @@ function Product({
                 {bestseller && (
                     <div className={styles.bestSeller}>Best seller</div>
                 )}
-                <img className={styles.image} src={image.src} alt={image.alt} />
+                <img
+                    className={styles.image}
+                    src={image.src}
+                    alt={image.alt}
+                    loading="lazy"
+                />
                 <Button className={styles.btn} buttonType="primary" size="md">
                     Add to cart
                 </Button>
