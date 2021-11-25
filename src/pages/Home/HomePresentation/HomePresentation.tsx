@@ -2,12 +2,15 @@ import React from 'react'
 import Product from 'interfaces'
 import styles from './HomePresentation.module.scss'
 import Button from 'components/Button/Button'
+import { GlobalContext } from 'GlobalContext'
 
 interface HomePresentationInterface {
     featuredProduct: Product
 }
 
 function HomePresentation({ featuredProduct }: HomePresentationInterface) {
+    const { addProductToCart } = React.useContext(GlobalContext)
+
     return (
         <section className={styles.homePresentation}>
             <div className={styles.imgContent}>
@@ -19,7 +22,12 @@ function HomePresentation({ featuredProduct }: HomePresentationInterface) {
                 />
                 <div className={styles.tag}>Photo of the day</div>
             </div>
-            <Button className={styles.button} size="lg" buttonType="primary">
+            <Button
+                className={styles.button}
+                onClick={() => addProductToCart(featuredProduct)}
+                size="lg"
+                buttonType="primary"
+            >
                 Add to cart
             </Button>
 
