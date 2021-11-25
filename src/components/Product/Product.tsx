@@ -8,7 +8,7 @@ function Product({ name, category, currency, price, image }: ProductInterface) {
         <section className={styles.card}>
             <div className={styles.cardImageArea}>
                 <img className={styles.image} src={image.src} alt={image.alt} />
-                <Button buttonType="primary" size="md">
+                <Button className={styles.btn} buttonType="primary" size="md">
                     Add to cart
                 </Button>
             </div>

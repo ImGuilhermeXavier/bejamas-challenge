@@ -3,6 +3,8 @@ import ProductInterface from 'interfaces'
 import styles from './HomeProducts.module.scss'
 import Product from 'components/Product/Product'
 
+import filter from 'static/icons/filter.svg'
+
 interface HomeProductsInterface {
     products: ProductInterface[] | null
 }
@@ -25,7 +27,7 @@ function HomeProducts({ products }: HomeProductsInterface) {
                         onClick={() => setPremium(false)}
                     >
                         Photography
-                    </button>{' '}
+                    </button>
                     /
                     <button
                         className={`${styles.optionButton} ${
@@ -36,7 +38,7 @@ function HomeProducts({ products }: HomeProductsInterface) {
                         Premium Photos
                     </button>
                 </h2>
-                <h3 className={styles.options}>
+                <h3 className={`${styles.options} ${styles.filterDesk}`}>
                     Sort By{' '}
                     <button
                         className={`${styles.optionButton} ${styles.optionButtonSm}`}
@@ -44,9 +46,11 @@ function HomeProducts({ products }: HomeProductsInterface) {
                         Price
                     </button>
                 </h3>
+                <div className={styles.filter}>
+                    <img src={filter} alt="Icon filter" />
+                </div>
             </header>
 
-            <section className="category"></section>
             <section className={styles.products}>
                 {products ? (
                     products.map((product, index) => (

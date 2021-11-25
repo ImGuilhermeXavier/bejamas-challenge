@@ -2,25 +2,30 @@
 
 .homeProducts {
     margin-bottom: 30vh;
-    display: grid;
-    grid-template: 50px 1fr / 1fr 3fr;
-    row-gap: 3rem;
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    grid-column: span 2;
+    margin-bottom: 2rem;
+
+    @include screen-md-up {
+        margin-bottom: 3rem;
+    }
 }
 
 .optionButton {
     background: transparent;
     border: none;
-    font-size: 28px;
-    margin: 0 10px;
+    font-size: 18px;
     cursor: pointer;
     color: $light-gray;
+
+    @include screen-md-up {
+        margin: 0 10px;
+        font-size: 28px;
+    }
 }
 
 .optionButton.optionButtonSm {
@@ -34,7 +39,29 @@
 .products {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 300px;
     grid-gap: 40px;
+    grid-column: span 2;
+
+    @include screen-md-up {
+        grid-column: initial;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include screen-xl-up {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.filter {
+    @include screen-md-up {
+        display: none;
+    }
+}
+
+.filterDesk {
+    display: none;
+
+    @include screen-md-up {
+        display: block;
+    }
 }
