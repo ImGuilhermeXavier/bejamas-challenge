@@ -7,7 +7,9 @@ let containerDomNode: HTMLDivElement
 
 const useToast = () => {
     const create = (type: 'success' | 'alert' | 'error', message: string) => {
-        if (hasTooltip()) return
+        if (hasTooltip()) {
+            remove()
+        }
         createTooltipOnDOM()
         ReactDOM.render(
             <React.Suspense fallback>

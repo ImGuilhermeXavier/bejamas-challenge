@@ -8,24 +8,20 @@ interface PropsToast {
     message: string
 }
 
+const TOAST_TIME = 800
+
 const Toast = ({ type, message }: PropsToast) => {
     const { remove } = useToast()
     const toastRef = useRef<HTMLDivElement>(null)
 
-    const getTimer = React.useCallback(() => {
-        return message.trim().length * 0.9
-    }, [message])
-
     React.useEffect(() => {
-        const timer = getTimer()
-        progressBar(timer)
+        progressBar(TOAST_TIME)
         setTimeout(() => {
             remove()
-        }, getTimer() * 100)
-    }, [getTimer, remove])
+        }, TOAST_TIME)
+    }, [remove])
 
     function progressBar(timer: number) {
-        console.log(styles)
         const id = setInterval(frame, timer)
         let width = 1
         function frame() {

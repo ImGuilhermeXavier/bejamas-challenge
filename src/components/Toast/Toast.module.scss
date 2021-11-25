@@ -4,14 +4,14 @@
     display: flex;
     align-items: center;
     position: fixed;
-    width: calc(100% - 45px);
-    right: 10px;
+    width: calc(100% - 40px);
+    right: 20px;
     min-height: 82px;
     border-radius: 8px;
     color: $white;
     font-size: 16px;
     padding: 12px;
-    bottom: 80px;
+    bottom: 10px;
     cursor: pointer;
     opacity: 0;
     transform: translateX(-20px);
