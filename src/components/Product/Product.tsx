@@ -3,7 +3,6 @@ import styles from './Product.module.scss'
 import ProductInterface from 'interfaces'
 import Button from 'components/Button/Button'
 import { GlobalContext } from 'GlobalContext'
-import useToast from 'hooks/useToast'
 
 function Product({
     name,
@@ -15,7 +14,6 @@ function Product({
     featured,
 }: ProductInterface) {
     const { addProductToCart } = React.useContext(GlobalContext)
-    const toast = useToast()
 
     function addProduct() {
         addProductToCart({
@@ -27,7 +25,6 @@ function Product({
             category,
             featured,
         })
-        toast.success(`${name} has been add to Cart`)
     }
 
     return (

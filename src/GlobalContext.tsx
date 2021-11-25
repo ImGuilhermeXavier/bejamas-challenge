@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductInterface from 'interfaces'
+import useToast from 'hooks/useToast'
 
 interface PropsGlobalContext {
     cartProducts: ProductInterface[]
@@ -18,12 +19,16 @@ interface PropsGlobalStorage {
 }
 
 export const GlobalStorage = ({ children }: PropsGlobalStorage) => {
+    const toast = useToast()
     const [cartProducts, setCartProducts] = React.useState<ProductInterface[]>(
         [],
     )
 
     function addProductToCart(product: ProductInterface) {
+        if (cartProducts.find(({ name }) => name === product.name))
+            return toast.error('Product already selected')
         setCartProducts([...cartProducts, product])
+        toast.success(`${product.name} has been add to Cart`)
     }
 
     function clearAllCart() {
