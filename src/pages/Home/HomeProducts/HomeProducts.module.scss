@@ -47,7 +47,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @include screen-md-up {
+    @include screen-lg-up {
         grid-template-columns: repeat(4, 1fr);
     }
 
