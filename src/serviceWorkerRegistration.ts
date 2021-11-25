@@ -68,6 +68,13 @@ function registerValidSW(swUrl: string, config?: Config) {
                 if (installingWorker == null) {
                     return
                 }
+
+                // Tentativa de forçar a instalação de um SW que esta aguardando
+                const waitingServiceWorker = registration.waiting
+                if (waitingServiceWorker) {
+                    waitingServiceWorker.postMessage({ type: 'SKIP_WAITING' })
+                }
+
                 installingWorker.onstatechange = () => {
                     if (installingWorker.state === 'installed') {
                         if (navigator.serviceWorker.controller) {
@@ -78,6 +85,11 @@ function registerValidSW(swUrl: string, config?: Config) {
                                 'New content is available and will be used when all ' +
                                     'tabs for this page are closed. See https://cra.link/PWA.',
                             )
+
+                            // Mais uma tentativa de pular
+                            installingWorker.postMessage({
+                                type: 'SKIP_WAITING',
+                            })
 
                             // Execute callback
                             if (config && config.onUpdate) {
