@@ -15,11 +15,21 @@
 }
 
 .btn {
+    transition: all linear 0.1s;
     position: absolute;
     width: 100%;
-    z-index: 1;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+
+    @include screen-md-up {
+        opacity: 0;
+        bottom: -5px;
+    }
+}
+
+.cardImageArea:hover .btn {
+    opacity: 1;
+    bottom: 0;
 }
 
 .category {

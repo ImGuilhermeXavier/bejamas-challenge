@@ -31,6 +31,11 @@
     }
 }
 
+.imgContent:hover .tag {
+    bottom: 0;
+    opacity: 1;
+}
+
 .button {
     @include screen-md-up {
         display: none;
@@ -38,12 +43,18 @@
 }
 
 .tag {
+    transition: all ease-in-out 0.1s;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     background: $white;
     font-weight: bold;
     font-size: 1rem;
     padding: 1.2rem 2.5rem;
+
+    @include screen-md-up {
+        bottom: -10px;
+        opacity: 0;
+    }
 }
 
 .subtitle {
