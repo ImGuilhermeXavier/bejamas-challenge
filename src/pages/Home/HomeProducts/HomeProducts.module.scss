@@ -95,3 +95,15 @@
 .iconSortDesc {
     transform: rotate(270deg);
 }
+
+.sortMobile {
+    margin: 3rem;
+    font-size: 26px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .optionButton.optionButtonSm {
+        font-size: 26px;
+    }
+}

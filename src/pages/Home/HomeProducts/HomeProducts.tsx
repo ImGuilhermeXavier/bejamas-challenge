@@ -102,28 +102,24 @@ function HomeProducts({ products }: HomeProductsInterface) {
                     isOpen={bottomSheetFilters}
                     handleClose={() => setBottomSheetFilters(false)}
                 >
-                    <>
-                        <h3 className={`${styles.sort} ${styles.filterDesk}`}>
-                            Sort By{' '}
-                            <button
-                                className={`${styles.optionButton} ${
-                                    styles.optionButtonSm
-                                } ${
-                                    sortType ? '' : styles.optionButtonDisabled
+                    <div className={`${styles.sortMobile}`}>
+                        Sort By{' '}
+                        <button
+                            className={`${styles.optionButton} ${
+                                styles.optionButtonSm
+                            } ${sortType ? '' : styles.optionButtonDisabled}`}
+                            onClick={() => sortBy('price', !desc)}
+                        >
+                            Price
+                            <img
+                                className={`${styles.iconSort} ${
+                                    desc ? styles.iconSortDesc : ''
                                 }`}
-                                onClick={() => sortBy('price', !desc)}
-                            >
-                                Price
-                                <img
-                                    className={`${styles.iconSort} ${
-                                        desc ? styles.iconSortDesc : ''
-                                    }`}
-                                    src={arrow}
-                                    alt="Arrow icon"
-                                />
-                            </button>
-                        </h3>
-                    </>
+                                src={arrow}
+                                alt="Arrow icon"
+                            />
+                        </button>
+                    </div>
                 </BottomSheet>
             )}
         </section>
