@@ -5,10 +5,18 @@ import styles from './Nav.module.scss'
 import { GlobalContext } from 'GlobalContext'
 import BottomSheet from 'components/BottomSheet/BottomSheet'
 import Button from 'components/Button/Button'
+import useToast from 'hooks/useToast'
 
 function Nav() {
     const { cartProducts, clearAllCart } = React.useContext(GlobalContext)
     const [cartBottomSheet, setCartBottomSheet] = useState(false)
+    const toast = useToast()
+
+    function openCardBottomSheet() {
+        if (!cartProducts.length)
+            return toast.alert('Please, select some product')
+        setCartBottomSheet(true)
+    }
 
     return (
         <nav className={styles.nav}>
@@ -20,7 +28,7 @@ function Nav() {
                     className={styles.marketCar}
                     src={marketCarIcon}
                     alt="Market car"
-                    onClick={() => setCartBottomSheet(true)}
+                    onClick={() => openCardBottomSheet()}
                 />
                 {cartProducts && (
                     <div className={styles.cartCount}>
