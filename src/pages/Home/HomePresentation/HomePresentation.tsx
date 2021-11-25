@@ -8,10 +8,6 @@ interface HomePresentationInterface {
 }
 
 function HomePresentation({ featuredProduct }: HomePresentationInterface) {
-    useEffect(() => {
-        console.log(featuredProduct)
-    }, [featuredProduct])
-
     return (
         <section className={styles.homePresentation}>
             <div className={styles.imgContent}>
