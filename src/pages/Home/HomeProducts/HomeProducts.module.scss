@@ -88,12 +88,12 @@
 
 .iconSort {
     transition: transform ease-in-out 0.2s;
-    transform: rotate(90deg);
+    transform: rotate(270deg);
     margin-left: 10px;
 }
 
 .iconSortDesc {
-    transform: rotate(270deg);
+    transform: rotate(90deg);
 }
 
 .sortMobile {
