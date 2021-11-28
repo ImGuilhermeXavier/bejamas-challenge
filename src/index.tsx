@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.scss'
-import registerServiceWorker from './serviceWorker'
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
 import App from './App'
 
@@ -12,4 +12,4 @@ ReactDOM.render(
     document.getElementById('root'),
 )
 
-registerServiceWorker()
+serviceWorkerRegistration.register()
