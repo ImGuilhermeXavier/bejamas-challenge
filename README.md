@@ -5,7 +5,6 @@
 
 [Features]
 
-
 ✅  Featured Product
 
 ✅  Product List
@@ -16,4 +15,4 @@
 
 ✅  API Implementation
 
-✅  Service Worker
+✅  Service Worker!
